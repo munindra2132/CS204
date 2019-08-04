@@ -6,11 +6,11 @@ int main()
 { int cas;
  cout<<"Enter number of case: ";
  cin>>cas;
- for(int i=0;i<cas<i++)
+ for(int i=0;i<cas;i++)
  { 
    int suc=0;
    string p;
-   cout<<"Enter number: "
+   cout<<"Enter number: ";
    cin>>p;
    for(int i=1;i< sqrt(stoi(p));i++)
     {
@@ -22,6 +22,7 @@ int main()
    cout<<"Not prime";
   else
    cout<<"Prime";
-  }
+    }
+ }
 return 0;
 }
