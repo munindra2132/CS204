@@ -14,7 +14,7 @@ public:
   void Search(int);
   int Search(int,int);
   int Length();
-  void show();
+  
 };
 
 node* head;
