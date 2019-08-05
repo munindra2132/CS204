@@ -174,7 +174,7 @@ int main()
                 {
                   int len;
                    len=(*head).Length();
-                   cout<<"Length is "<<len<<endl;
+                   cout<<len<<endl;
                   break;
                 }
              default:
