@@ -14,6 +14,7 @@ public:
   void Search(int);
   int Search(int,int);
   int Length();
+  void show();
 };
 
 node* head;
@@ -63,8 +64,9 @@ int node:: Del(int a, int b)
   tmp=head;
    while(tmp!=NULL)
     {
-       if(prev!=NULL)
-          if((tmp->x==a) && (tmp->y==b))
+       if((tmp->x==a) && (tmp->y==b))
+       {  
+       	 if(prev!=NULL)
            {
             prev->ptr=tmp->ptr;
              tmp=NULL;
@@ -72,13 +74,16 @@ int node:: Del(int a, int b)
             return 1;
             }
          else
-           if((tmp->x==a) && (tmp->y==b))
-             {
-               DelFirst();
+             { 
+               (*head).DelFirst();
                return 1;
               }
+        }
+        else
+        {
          prev=tmp;
-          tmp=tmp->ptr;  
+          tmp=tmp->ptr;
+        } 
       }
   return -1;
 }
@@ -92,8 +97,8 @@ void node:: Search(int d)
    {
     float dis;
     dis= sqrt((tmp->x)*(tmp->x)+(tmp->y)*(tmp->y));
-     if(dis<d)
-       cout<<"( "<<tmp->x<<","<<tmp->y<<")";
+     if(dis<=d)
+       cout<<"("<<tmp->x<<","<<tmp->y<<")";
      tmp=tmp->ptr;
     }
 }
@@ -123,54 +128,46 @@ int node:: Length()
      }
  return count;
 }
-
 int main()
 {
  head=NULL;
  int nol;
  int b,c,d,jud;
- cout<<"Enter no. of operations to be performed : ";
+ 
  cin>>nol;
- cout<<"Enter opeartion number1 number2 -"<<endl;
+ 
    for(int i=0;i<nol;i++)
     { 
-     cin>>b>>c>>d;
+     cin>>b;
        switch(b)
         {
           case 1:
-             {
-               (*head).AddFirst(b,c);
+             { cin>>c>>d;
+               (*head).AddFirst(c,d);
                break;
               }
          case 2:
               {jud=(*head).DelFirst();
-                 if(jud==1)
-                   cout<<"Deletion successful"<<endl;
-                  else
-                   cout<<"Deletion unsuccessful"<<endl;
-                break; 
+                 break; 
                }
          case 3:
-              {
-                jud=(*head).Del(b,c);
-                 if(jud==1)
-                   cout<<"Deletion successful"<<endl;
-                  else
-                   cout<<"Deletion unsuccessful"<<endl;
+              { cin>>c>>d;
+                jud=(*head).Del(c,d);
+              
                break;
                }
          case 4:
-               {
-                 (*head).Search(b);
+               {cin>>c;
+                 (*head).Search(c);
                  break;
                 }
           case 5:
-                {
-                 jud=(*head).Search(b,c);
+                { cin>>c>>d;
+                 jud=(*head).Search(c,d);
                    if(jud==1)
-                    cout<<"Found"<<endl;
+                    cout<<"\nTrue"<<endl;
                    else
-                     cout<<"Not Found"<<endl;
+                     cout<<"False"<<endl;
                  break;
                   }
            case 6:
@@ -179,7 +176,7 @@ int main()
                    len=(*head).Length();
                    cout<<"Length is "<<len<<endl;
                   break;
-                  }
+                }
              default:
                    {cout<<"invalid option"<<endl;
                     }
