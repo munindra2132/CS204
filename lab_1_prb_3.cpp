@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
  int cas;
-cout<<"Enter number of cases: ";
+
 cin>>cas;
 for(int n=0;n<cas;n++)
 {
