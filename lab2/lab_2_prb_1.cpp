@@ -44,7 +44,9 @@ void node:: AddFirst(int a, int b)
 int node:: DelFirst()
 {
   if(head==NULL)
-   return -1;
+  { cout<<"-1"<<endl;
+    return -1;
+  }
   else
    {
      node* tmp;
@@ -60,6 +62,7 @@ int node:: Del(int a, int b)
 {
  node* tmp; 
  node* prev;
+  int cou=0;
   prev=NULL;
   tmp=head;
    while(tmp!=NULL)
@@ -67,7 +70,7 @@ int node:: Del(int a, int b)
        if((tmp->x==a) && (tmp->y==b))
        {  
        	 if(prev!=NULL)
-           {
+           { cou++;
             prev->ptr=tmp->ptr;
              tmp=NULL;
              delete tmp;
@@ -85,6 +88,8 @@ int node:: Del(int a, int b)
           tmp=tmp->ptr;
         } 
       }
+  if(cou==1)
+     cout<<"-1"<<endl;
   return -1;
 }
 
@@ -93,14 +98,21 @@ void node:: Search(int d)
 {
  node* tmp;
  tmp= head;
+  int count=-1;
   while(tmp!=NULL)
    {
     float dis;
     dis= sqrt((tmp->x)*(tmp->x)+(tmp->y)*(tmp->y));
      if(dis<=d)
-       cout<<"("<<tmp->x<<","<<tmp->y<<")";
+       count++;
      tmp=tmp->ptr;
     }
+  if(count==-1)
+    cout<<count<<endl;
+  else
+  { count++;
+    cout<<count<<endl;
+  }   
 }
 
 int node:: Search(int a, int b)
