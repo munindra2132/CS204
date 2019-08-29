@@ -104,7 +104,7 @@ et* Tree(std::vector<std::string> s)
     return t; 
 } 
 int priority(char a) {
-    int temp;
+    int temp=4;
     if (a == '^')
         temp = 1;
     else  if (a == '*' || a == '/')
