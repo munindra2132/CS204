@@ -83,7 +83,7 @@ int eval(et* root)
   
 
 int priority(char a) {
-    int temp;
+    int temp=4;
     if (a == '^')
         temp = 1;
     else  if (a == '*' || a == '/')
