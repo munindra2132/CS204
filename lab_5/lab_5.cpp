@@ -213,7 +213,11 @@ void asign (string f)
      		if(!(t.compare(variable[x].v)))
      		{
               variable[x].i=eval(root);
-              continue;
+                 if(prn!=0)
+              {
+              cout<<variable[x].i<<endl;
+              }
+              goto abc;
      		}
      	}
          var d;
@@ -225,6 +229,8 @@ void asign (string f)
          cout<< d.i<<endl;
           }
          variable.push_back(d);
+	    abc:
+	    
      }
    
 }
