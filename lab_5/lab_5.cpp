@@ -190,8 +190,16 @@ void asign (string f)
                }
               
 		 }
-		 for(;c<f.size();c++)
-		 	g1.push_back(f[c]);
+		  for(int k=c;k<f.size();k++)
+		 	{   
+		 		if(f[k]=='-' && f[k-1]=='(' || f[k]=='-' && k==c)
+		 	     {
+		 	     	g1.push_back('0');
+		 	     	g1.push_back(f[k]);
+		 	     }
+		 		 else
+		 		   g1.push_back(f[k]);
+		 	}	   
   //cout<<g1;		 
   string g=postfx(g1);
   std::istringstream iss(g);
