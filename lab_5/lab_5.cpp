@@ -15,7 +15,7 @@ et *r, *l;
 struct var 
  {
  	string v;
-    int i;
+    long long int i;
   };
  std::vector<var> variable;
  
