@@ -29,13 +29,13 @@ long long int g;
 		while(non--)
 		{ 
 			string c;
-			int k=0;
-			while(k<c.size())
+			//int k=0;
+			/*while(k<c.size())
 			{
 				if(c[k]=='0')
 					c.erase(k);
 				k++;
-			}
+			}*/
 			cin>>c;
 			vec.push_back(c);
         }
